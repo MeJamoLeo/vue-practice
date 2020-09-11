@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./stylesheet.css">
 </head>
-<script src="./vue.min.js"></script>
 
 <body>
     <div id="app">
-        <button v-on:click="counter++">Increase</button>
-        <button v-on:click="counter--">Decrease</button>
-        <button v-on:click="secondCounter++">Increase Second</button>
-        <p>Counter: {{ counter }} | {{secondCounter}}</p>
-        <p>Result: {{ result() }} | {{output}}</p>
+        <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+        <div class="demo" :class="{red: attachRed}"></div>
+        <div class="demo" :class="[color,{red: attachRed}]"></div>
+        <hr>
+        <input type="text" v-model="color">
     </div>
 
     <script src="./app.js"></script>
